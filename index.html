@@ -149,12 +149,17 @@
     background: radial-gradient(circle, rgba(228,183,255,0.35), transparent 70%);
   }
 
-  h1 {
-    font-size: clamp(30px, 4.8vw, 62px);
-    line-height: 1.15;
-    margin: 18px 0 18px;
-    letter-spacing: 0.01em;
-  }
+h1.hero-title {
+  font-size: clamp(30px, 4.8vw, 62px);
+  line-height: 1.12;
+  margin: 18px 0 18px;
+  letter-spacing: -0.01em;
+}
+
+.hero-line {
+  display: block;
+  white-space: nowrap;
+}
 
   h2 {
     font-size: clamp(28px, 3vw, 42px);
@@ -583,12 +588,17 @@
       line-height: 1.5;
     }
 
-    h1 {
-      font-size: clamp(40px, 12vw, 52px);
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      margin: 16px 0 18px;
-    }
+h1.hero-title {
+  font-size: clamp(32px, 9.8vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin: 16px 0 18px;
+}
+
+.hero-line {
+  display: block;
+  white-space: nowrap;
+}
 
     .lead {
       font-size: 15px;
@@ -649,11 +659,11 @@
   <span>予約の取れない個別鑑定</span>
 </div>
 
-<h1>
-  守護霊からの<br />
-  メッセージで<br />
-  <span class="highlight">心のブロックを外し、</span><br />
-  本来の流れへ戻る
+<h1 class="hero-title">
+  <span class="hero-line">守護霊からの</span>
+  <span class="hero-line">メッセージで</span>
+  <span class="hero-line highlight">心のブロックを外し、</span>
+  <span class="hero-line">本来の流れへ戻る</span>
 </h1>
         <p class="lead">
           知来メゾット個別鑑定は、守護霊・守護神とコンタクトを取りながら、
