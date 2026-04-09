@@ -6,38 +6,44 @@
   <title>知来メゾット個別鑑定｜予約の取れない個別鑑定</title>
   <meta name="description" content="予約の取れない知来メゾット個別鑑定。守護霊のメッセージをあなたにお伝えします" />
 <style>
-  :root {
-    --bg: #12081f;
-    --bg-soft: #1c1030;
-    --card: rgba(255,255,255,0.08);
-    --text: #f8f2ff;
-    --muted: #d7cae8;
-    --accent: #d4af37;
-    --accent-2: #f6d88a;
-    --gold: #f6d88a;
-    --gold-deep: #c89b2c;
-    --pink: #ffb4e8;
-    --line: rgba(255,255,255,0.12);
-    --shadow: 0 20px 50px rgba(0,0,0,0.35);
-    --radius: 24px;
-    --max: 1120px;
-  }
+:root {
+  --bg: #140724;
+  --bg-soft: #24113f;
+  --card: rgba(255,255,255,0.08);
+  --text: #f8f2ff;
+  --muted: #ddd0ef;
 
+  --accent: #d4af37;
+  --accent-2: #f6d88a;
+  --gold: #f6d88a;
+  --gold-deep: #c89b2c;
+
+  --purple-1: #2a0f4d;
+  --purple-2: #3a1564;
+  --purple-3: #4e1d7a;
+  --purple-glow: rgba(160, 90, 255, 0.22);
+
+  --pink: #ffb4e8;
+  --line: rgba(255,255,255,0.12);
+  --shadow: 0 20px 50px rgba(0,0,0,0.35);
+  --radius: 24px;
+  --max: 1120px;
+}
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
-  body {
-    margin: 0;
-    font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
-    color: var(--text);
-    background:
-      radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 30%),
-      radial-gradient(circle at top left, rgba(246,216,138,0.10), transparent 22%),
-      linear-gradient(180deg, #14091f 0%, #1a1030 36%, #12081f 100%);
-    line-height: 1.8;
-    letter-spacing: 0.02em;
-  }
-
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(168, 85, 247, 0.18), transparent 28%),
+    radial-gradient(circle at top left, rgba(236, 72, 153, 0.10), transparent 20%),
+    radial-gradient(circle at 50% 20%, rgba(124, 58, 237, 0.10), transparent 30%),
+    linear-gradient(180deg, #12051f 0%, #1d0a35 30%, #2a0f4d 60%, #140724 100%);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; display: block; }
 
@@ -118,7 +124,15 @@
     align-items: center;
   }
 
-  .hero-card,
+  .hero-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -50px -60px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.22), transparent 70%);
+}
   .glass,
   .menu-card,
   .voice-card,
@@ -215,11 +229,11 @@
     box-shadow: 0 12px 30px rgba(212,175,55,.28);
   }
 
-  .btn-secondary {
-    border: 1px solid rgba(246,216,138,0.30);
-    background: rgba(246,216,138,0.08);
-    color: #fff7d6;
-  }
+.btn-secondary {
+  border: 1px solid rgba(246,216,138,0.30);
+  background: rgba(255,255,255,0.04);
+  color: #fff7d6;
+}
 
   .hero-visual {
     position: relative;
@@ -229,17 +243,17 @@
   }
 
   .oracle-circle {
-    width: min(92vw, 460px);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    position: relative;
-    background:
-      radial-gradient(circle at center, rgba(246,216,138,0.24), rgba(212,175,55,0.10) 35%, rgba(255,255,255,0.04) 60%, transparent 70%),
-      linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-    border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: 0 0 0 24px rgba(255,255,255,0.02), 0 0 120px rgba(246,216,138,0.14);
-    overflow: hidden;
-  }
+  width: min(92vw, 460px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  background:
+    radial-gradient(circle at center, rgba(246,216,138,0.12), rgba(139,92,246,0.14) 35%, rgba(255,255,255,0.04) 60%, transparent 70%),
+    linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 0 0 24px rgba(255,255,255,0.02), 0 0 120px rgba(139,92,246,0.20);
+  overflow: hidden;
+}
 
   .oracle-circle::before,
   .oracle-circle::after {
