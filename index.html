@@ -12,9 +12,10 @@
     --card: rgba(255,255,255,0.08);
     --text: #f8f2ff;
     --muted: #d7cae8;
-    --accent: #b57aff;
-    --accent-2: #e4b7ff;
+    --accent: #d4af37;
+    --accent-2: #f6d88a;
     --gold: #f6d88a;
+    --gold-deep: #c89b2c;
     --pink: #ffb4e8;
     --line: rgba(255,255,255,0.12);
     --shadow: 0 20px 50px rgba(0,0,0,0.35);
@@ -30,11 +31,988 @@
     font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
     color: var(--text);
     background:
-      radial-gradient(circle at top right, rgba(181,122,255,0.24), transparent 30%),
-      radial-gradient(circle at top left, rgba(246,216,138,0.12), transparent 22%),
+      radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 30%),
+      radial-gradient(circle at top left, rgba(246,216,138,0.10), transparent 22%),
       linear-gradient(180deg, #14091f 0%, #1a1030 36%, #12081f 100%);
     line-height: 1.8;
     letter-spacing: 0.02em;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .stars,
+  .stars::before,
+  .stars::after {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    background-image:
+      radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.7) 50%, transparent 52%),
+      radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,.85) 50%, transparent 52%),
+      radial-gradient(1.5px 1.5px at 50% 60%, rgba(255,255,255,.7) 50%, transparent 52%),
+      radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,.65) 50%, transparent 52%),
+      radial-gradient(2px 2px at 70% 75%, rgba(246,216,138,.8) 50%, transparent 52%);
+    opacity: 0.45;
+    z-index: 0;
+  }
+
+  .stars::before { transform: scale(1.2); opacity: .22; }
+  .stars::after { transform: scale(1.6); opacity: .12; }
+
+  .container {
+    width: min(calc(100% - 32px), var(--max));
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section { padding: 72px 0; }
+  .section-sm { padding: 52px 0; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    font-size: 14px;
+    color: var(--accent-2);
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(246,216,138,0.22), rgba(212,175,55,0.18));
+    border: 1px solid rgba(246,216,138,0.28);
+    color: #fff4cf;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.16);
+  }
+
+  .hero-badge .sep {
+    opacity: .7;
+  }
+
+  .hero {
+    padding: 80px 0 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .hero-card,
+  .glass,
+  .menu-card,
+  .voice-card,
+  .faq-item,
+  .problem-card,
+  .benefit-card,
+  .cta-box,
+  .pricing-card,
+  .apply-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+  }
+
+  .hero-card {
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -50px -60px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(246,216,138,0.25), transparent 70%);
+  }
+
+  h1.hero-title {
+    font-size: clamp(30px, 4.8vw, 62px);
+    line-height: 1.12;
+    margin: 18px 0 18px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  h2 {
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.3;
+    margin: 0 0 14px;
+  }
+
+  h3 {
+    font-size: 22px;
+    margin: 0 0 10px;
+    line-height: 1.5;
+  }
+
+  .lead {
+    font-size: clamp(16px, 2vw, 19px);
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .highlight {
+    background: linear-gradient(90deg, #fff3b8, var(--gold), #f0c860);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+  }
+
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #f7e29f, var(--accent), var(--gold-deep));
+    color: #3f2b09;
+    box-shadow: 0 12px 30px rgba(212,175,55,.28);
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(246,216,138,0.30);
+    background: rgba(246,216,138,0.08);
+    color: #fff7d6;
+  }
+
+  .hero-visual {
+    position: relative;
+    min-height: 520px;
+    display: grid;
+    place-items: center;
+  }
+
+  .oracle-circle {
+    width: min(92vw, 460px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    background:
+      radial-gradient(circle at center, rgba(246,216,138,0.24), rgba(212,175,55,0.10) 35%, rgba(255,255,255,0.04) 60%, transparent 70%),
+      linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 0 0 24px rgba(255,255,255,0.02), 0 0 120px rgba(246,216,138,0.14);
+    overflow: hidden;
+  }
+
+  .oracle-circle::before,
+  .oracle-circle::after {
+    content: "✦";
+    position: absolute;
+    color: rgba(246,216,138,0.9);
+    font-size: 28px;
+  }
+
+  .oracle-circle::before { top: 18%; left: 14%; }
+  .oracle-circle::after { right: 16%; bottom: 20%; }
+
+  .oracle-inner {
+    position: absolute;
+    inset: 11%;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 26px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+  }
+
+  .oracle-inner strong {
+    display: block;
+    font-size: clamp(26px, 3.2vw, 42px);
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .oracle-inner span {
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .floating-card {
+    position: absolute;
+    padding: 16px 18px;
+    border-radius: 20px;
+    background: rgba(19,10,32,0.74);
+    border: 1px solid rgba(255,255,255,0.10);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    max-width: 220px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .floating-1 { top: 8%; right: -2%; }
+  .floating-2 { bottom: 14%; left: -2%; }
+
+  .problem-grid,
+  .benefit-grid,
+  .voice-grid,
+  .faq-list,
+  .apply-grid {
+    display: grid;
+    gap: 18px;
+  }
+
+  .problem-grid,
+  .benefit-grid,
+  .voice-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .apply-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .problem-card,
+  .benefit-card,
+  .voice-card,
+  .faq-item,
+  .apply-card {
+    padding: 24px;
+  }
+
+  .problem-card strong,
+  .benefit-card strong,
+  .apply-card strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .section-sub {
+    text-align: center;
+    color: var(--muted);
+    max-width: 800px;
+    margin: 0 auto 34px;
+  }
+
+  .divider {
+    width: 82px;
+    height: 4px;
+    border-radius: 999px;
+    margin: 18px auto 0;
+    background: linear-gradient(90deg, var(--gold), var(--accent), #fff0a8);
+  }
+
+  .profile-flex {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .profile-image-wrap {
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .profile-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .timeline {
+    display: grid;
+    gap: 14px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 82px 1fr;
+    gap: 18px;
+    align-items: start;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 22px;
+  }
+
+  .timeline-item .num {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(246,216,138,0.28), rgba(212,175,55,0.16));
+    border: 1px solid rgba(255,255,255,0.12);
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .voice-card {
+    position: relative;
+  }
+
+  .voice-card::before {
+    content: "“";
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 48px;
+    line-height: 1;
+    color: rgba(255,255,255,0.10);
+  }
+
+  .pricing-card {
+    padding: 24px;
+    overflow-x: auto;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 16px 14px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+
+  .pricing-table th {
+    background: rgba(246,216,138,0.12);
+    color: #fff6d5;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .pricing-table td:first-child,
+  .pricing-table th:first-child {
+    text-align: left;
+    min-width: 140px;
+  }
+
+  .pricing-table td {
+    background: rgba(255,255,255,0.03);
+    color: var(--muted);
+    font-size: 16px;
+  }
+
+  .pricing-table .price {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .pricing-table .row-title {
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .apply-card {
+    position: relative;
+  }
+
+  .apply-card .group-label {
+    display: inline-flex;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(246,216,138,0.10);
+    color: #fff2bf;
+    font-size: 13px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(246,216,138,0.18);
+  }
+
+  .apply-links {
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .small {
+    font-size: 13px;
+    color: rgba(255,255,255,.62);
+  }
+
+  .faq-list {
+    max-width: 920px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+  }
+
+  .faq-item strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  footer {
+    padding: 32px 0 48px;
+    color: rgba(255,255,255,.58);
+    text-align: center;
+    font-size: 14px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 980px) {
+    .hero-grid,
+    .problem-grid,
+    .benefit-grid,
+    .voice-grid,
+    .profile-flex,
+    .apply-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero { padding-top: 54px; }
+    .hero-visual { min-height: 420px; }
+    .floating-1 { top: 0; right: 2%; }
+    .floating-2 { bottom: 2%; left: 2%; }
+  }
+
+  @media (max-width: 680px) {
+    .container {
+      width: min(calc(100% - 20px), var(--max));
+    }
+
+    .section { padding: 56px 0; }
+    .section-sm { padding: 42px 0; }
+
+    .hero-card,
+    .problem-card,
+    .benefit-card,
+    .voice-card,
+    .faq-item,
+    .cta-box,
+    .glass,
+    .pricing-card,
+    .apply-card {
+      padding: 22px 18px !important;
+    }
+
+    .hero-card {
+      padding: 20px 16px !important;
+    }
+
+    .hero-badge {
+      font-size: 12px;
+      padding: 9px 14px;
+      gap: 6px;
+      line-height: 1.5;
+    }
+
+    h1.hero-title {
+      font-size: clamp(28px, 8.8vw, 40px);
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      margin: 16px 0 18px;
+    }
+
+    .hero-line {
+      display: block;
+      white-space: normal;
+    }
+
+    .lead {
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .timeline-item {
+      grid-template-columns: 1fr;
+    }
+
+    .timeline-item .num {
+      width: 48px;
+      height: 48px;
+    }
+
+    .cta-row {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    .floating-card {
+      position: static;
+      max-width: 100%;
+      margin-top: 14px;
+    }
+
+    .hero-visual {
+      min-height: auto;
+      gap: 14px;
+    }
+
+    .oracle-circle {
+      width: min(100%, 360px);
+    }
+
+    .section-sub {
+      font-size: 15px;
+    }
+
+    .pricing-table {
+      min-width: 640px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <div class="hero-badge">
+          <span>前回完売</span>
+          <span class="sep">｜</span>
+          <span>予約の取れない個別鑑定</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-line">守護霊のメッセージを</span>
+          <span class="hero-line highlight">あなたにお伝えします</span>
+        </h1>
+
+        <p class="lead">
+          知来メゾット個別鑑定は、守護霊・守護神とコンタクトを取りながら、
+          深い細胞に刻まれた原因を見つけ、心のブロックや思い込みを整えていくセッションです。
+          「何度決意しても同じことを繰り返してしまう」その流れを、ここで切り替えていきます。
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#menu">料金メニューを見る</a>
+          <a class="btn btn-secondary" href="#apply">申し込みを見る</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="oracle-circle">
+          <div class="oracle-inner">
+            <div>
+              <strong>知来メゾット</strong>
+              <span>守護霊のメッセージ × 心のブロック解除 × チャクラバランス調整</span>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card floating-1">
+          「止まっていた流れが動き出した」<br />
+          そんな声が集まる個別鑑定。
+        </div>
+        <div class="floating-card floating-2">
+          努力だけでは届かない部分に、
+          見えない世界からアプローチします。
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="glass cta-box">
+        <h2>こんなお悩み、ありませんか？</h2>
+        <p class="section-sub">
+          経済面の不安、自由な時間のなさ、自信のなさ、人間関係やパートナーの問題、才能が見つからない苦しさ。<br />
+          それはあなたの努力不足ではなく、見えない部分に原因があるかもしれません。
+        </p>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <strong>経済的な悩み</strong>
+            <p>頑張っているのに収入が安定しない。お金の不安から抜け出せない。</p>
+          </div>
+          <div class="problem-card">
+            <strong>時間と自由のなさ</strong>
+            <p>忙しいだけで毎日が終わる。本当にやりたいことに進めない。</p>
+          </div>
+          <div class="problem-card">
+            <strong>自信・才能の迷い</strong>
+            <p>自分にできることが分からない。何を選んでも確信が持てない。</p>
+          </div>
+          <div class="problem-card">
+            <strong>人間関係のしんどさ</strong>
+            <p>家族、職場、友人、パートナーとの関係に疲れてしまっている。</p>
+          </div>
+          <div class="problem-card">
+            <strong>同じことの繰り返し</strong>
+            <p>今年こそ変わりたいと思っても、結局また同じ現実に戻ってしまう。</p>
+          </div>
+          <div class="problem-card">
+            <strong>自分らしく生きられない</strong>
+            <p>本音を我慢しがちで、他人軸のまま人生が進んでいる感覚がある。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge">Profile</span>
+        <h2>霊視占い師　知来ママ</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="glass" style="padding:24px;">
+        <div class="profile-flex">
+          <div class="profile-image-wrap">
+            <img src="chirai-mama.jpg" alt="知来ママの写真" class="profile-image" />
+          </div>
+          <div>
+            <div style="display:inline-block; padding:8px 14px; border-radius:999px; background: rgba(255,255,255,0.08); color: var(--accent-2); font-size:14px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.12);">
+              人生を変える“見えない原因”を読み解く
+            </div>
+            <h3 style="font-size:24px; margin-bottom:12px;">予約が取れない占い師・知来ママ</h3>
+            <p style="color: var(--muted); font-size:16px; line-height:1.9; margin:0;">
+              大阪出身・63歳、4人家族。霊視占い師として30年の実績を持ち、「来ることを知らせる」という意味を持つ“知来”の名の通り、これから起こる流れを読み解く鑑定を行う。心のブロックを外す独自の「知来メゾット」を考案し、海外や遠方からも多くの相談者が訪れる予約困難な存在に。さらに、占い・美容・リラクゼーション・飲食・BARなど8店舗を経営し、顧客数5万人以上を抱える実業家としても活躍しながら、女性の起業支援にも力を注いでいる。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge">Method</span>
+        <h2>知来メゾットとは？</h2>
+        <div class="divider"></div>
+      </div>
+      <p class="section-sub">
+        守護霊・守護神とコンタクトを取り、深い細胞に刻まれた原因を見つけてブロックを外し、
+        オーラやチャクラに入り込んだマイナス波動を整えるセッションです。
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="num">01</div>
+          <div>
+            <h3>守護霊からのメッセージを受け取る</h3>
+            <p>今のあなたに必要な気づきや、なぜ同じ現象が繰り返されるのかの原因を、見えない存在との対話から紐解いていきます。</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="num">02</div>
+          <div>
+            <h3>心のブロックの根本を見つける</h3>
+            <p>幼い頃の記憶、前世でのカルマ、深いところに残る傷など、自分では気づきにくい部分を見つけていきます。</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="num">03</div>
+          <div>
+            <h3>チャクラと波動を整える</h3>
+            <p>チャクラバランスを正常に整え、マイナスの波動を調整することで、負の影響を受けにくい状態へ近づけていきます。</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="num">04</div>
+          <div>
+            <h3>現実が動き出す土台をつくる</h3>
+            <p>直感が冴え、人間関係や運気、お金の流れなど、現実面の変化につながる土台を整えていきます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge">Benefit</span>
+        <h2>個別鑑定で期待できる変化</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <strong>お金の流れが変わる</strong>
+          <p>止まっていたお金が流れ出し、収入アップのチャンスに気づきやすくなる状態へ。</p>
+        </div>
+        <div class="benefit-card">
+          <strong>人間関係が整う</strong>
+          <p>しんどい関係が自然と離れ、自分に必要な人とのご縁が残りやすくなる流れへ。</p>
+        </div>
+        <div class="benefit-card">
+          <strong>運気の流れが良くなる</strong>
+          <p>タイミングが合いやすくなり、必要な情報やチャンスが入ってきやすくなる感覚へ。</p>
+        </div>
+        <div class="benefit-card">
+          <strong>直感が冴える</strong>
+          <p>頭だけでは決められなかったことに、自分の感覚で選べるようになるサポートが期待できます。</p>
+        </div>
+        <div class="benefit-card">
+          <strong>ネガティブな影響を受けにくくなる</strong>
+          <p>周囲のエネルギーに振り回されず、ブレない自分を取り戻す方向へ。</p>
+        </div>
+        <div class="benefit-card">
+          <strong>自分軸で生きやすくなる</strong>
+          <p>外に振り回されるのではなく、自分の感覚で人生を創っていく土台づくりに。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge">Voice</span>
+        <h2>お客様の声</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="voice-grid">
+        <div class="voice-card">
+          <h3>ビジネスが一気に動き出した</h3>
+          <p>守護霊とつながった感覚のあと、止まっていたビジネスが動き出し、売上が一桁アップしたという声が紹介されています。</p>
+        </div>
+        <div class="voice-card">
+          <h3>家族の空気が変わった</h3>
+          <p>自分の意識を整えたことで、子どもが急に片付けや勉強を始めたり、主人が優しく協力的になったという体験談があります。</p>
+        </div>
+        <div class="voice-card">
+          <h3>迷わず動けるようになった</h3>
+          <p>守護霊とつながることで答えが降りてきやすくなり、迷いなく行動できるようになったという内容も掲載されています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge">Menu</span>
+        <h2>鑑定料金一覧</h2>
+        <div class="divider"></div>
+      </div>
+
+      <p class="section-sub">
+        初回・リピート・サロン生の区分ごとに料金が異なります。<br />
+        ご自身に該当する区分をご確認のうえ、お申し込みください。
+      </p>
+
+      <div class="pricing-card">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>区分</th>
+              <th>40分セッション</th>
+              <th>60分セッション</th>
+              <th>90分セッション</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-title">初回</td>
+              <td><span class="price">24,000円</span></td>
+              <td><span class="price">38,000円</span></td>
+              <td><span class="price">55,000円</span></td>
+            </tr>
+            <tr>
+              <td class="row-title">リピート</td>
+              <td><span class="price">22,000円</span></td>
+              <td><span class="price">32,000円</span></td>
+              <td><span class="price">48,000円</span></td>
+            </tr>
+            <tr>
+              <td class="row-title">サロン生</td>
+              <td><span class="price">16,000円</span></td>
+              <td><span class="price">24,000円</span></td>
+              <td><span class="price">35,000円</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="small" style="margin-top:16px; text-align:center;">
+        ※ ご自身の対象区分（初回・リピート・サロン生）をご確認ください。
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="apply">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge">Apply</span>
+        <h2>お申し込みはこちら</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="apply-grid">
+        <div class="apply-card">
+          <span class="group-label">初回の方</span>
+          <strong>初回料金で申し込む</strong>
+          <p style="color: var(--muted); margin: 0;">
+            はじめて知来メゾット個別鑑定を受ける方はこちらからお選びください。
+          </p>
+          <div class="apply-links">
+            <a class="btn btn-primary" href="https://chilai.stores.jp/items/666fe4701b56ba002f348d4c" target="_blank" rel="noopener noreferrer">40分セッション 24,000円</a>
+            <a class="btn btn-primary" href="https://chilai.stores.jp/items/68a29fa945c8a97459100d0d" target="_blank" rel="noopener noreferrer">60分セッション 38,000円</a>
+            <a class="btn btn-primary" href="https://chilai.stores.jp/items/6660877f00d7d50ff732ee0c" target="_blank" rel="noopener noreferrer">90分セッション 55,000円</a>
+          </div>
+        </div>
+
+        <div class="apply-card">
+          <span class="group-label">リピートの方</span>
+          <strong>リピート料金で申し込む</strong>
+          <p style="color: var(--muted); margin: 0;">
+            2回目以降の方は、こちらのリピート専用メニューからお申し込みください。
+          </p>
+          <div class="apply-links">
+            <a class="btn btn-primary" href="https://chilai.stores.jp/items/692f645f4b9bcaf9c0e55fee" target="_blank" rel="noopener noreferrer">40分セッション 22,000円</a>
+            <a class="btn btn-primary" href="https://chilai.stores.jp/items/6748992c07a6e81662c23f07" target="_blank" rel="noopener noreferrer">60分セッション 32,000円</a>
+            <a class="btn btn-primary" href="https://chilai.stores.jp/items/666fe2ebe0a19e002b08b705" target="_blank" rel="noopener noreferrer">90分セッション 48,000円</a>
+          </div>
+        </div>
+
+        <div class="apply-card">
+          <span class="group-label">サロン生の方</span>
+          <strong>サロン生料金で申し込む</strong>
+          <p style="color: var(--muted); margin: 0;">
+            サロン生の方は、特別価格のこちらの専用メニューからお選びください。
+          </p>
+          <div class="apply-links">
+            <a class="btn btn-primary" href="https://chilai.stores.jp/items/692f65c44b9bca0c41e56008" target="_blank" rel="noopener noreferrer">40分セッション 16,000円</a>
+            <a class="btn btn-primary" href="https://chilai.stores.jp/items/68662964c5d1bb1b0e658d6e" target="_blank" rel="noopener noreferrer">60分セッション 24,000円</a>
+            <a class="btn btn-primary" href="https://chilai.stores.jp/items/68662a651c72b42ed9a736e2" target="_blank" rel="noopener noreferrer">90分セッション 35,000円</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge">Message</span>
+        <h2>なぜ今、受けるべきなのか</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="cta-box">
+        <p>
+          人生は有限です。<br />
+          何度も「今年こそ変わる」と決めても、また同じ日々が繰り返される。
+          そのループを止めるには、表面の努力だけでなく、
+          見えないところにある原因に触れる必要があります。
+        </p>
+        <p>
+          「使命」とは、命を使うこと。<br />
+          今あなたが使っている時間は、本当にあなたの魂が望んでいることのためでしょうか。<br />
+          その真の声を聞くきっかけとして、この個別鑑定は用意されています。
+        </p>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn btn-primary" href="#apply">申し込みメニューを見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge">FAQ</span>
+        <h2>よくあるご質問</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <strong>Q. どのメニューを選べばいいですか？</strong>
+          <p>A. 初めての方は「初回」、2回目以降の方は「リピート」、サロン生の方は「サロン生」の区分からお選びください。時間の目安としては、1つのお悩みなら40分、複数相談したい方は60分、人生全体や深いテーマまで見てほしい方は90分がおすすめです。</p>
+        </div>
+        <div class="faq-item">
+          <strong>Q. スピリチュアルが初めてでも大丈夫ですか？</strong>
+          <p>A. はい。初めての方でも受けていただきやすいよう、分かりやすい導線と表現でご案内しています。</p>
+        </div>
+        <div class="faq-item">
+          <strong>Q. 自分がどの料金対象かわからない場合は？</strong>
+          <p>A. ご不明な場合は、お申し込み前にお問い合わせください。対象区分を確認したうえでご案内いたします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>迷う前に、知来メゾットを体感してください</h2>
+        <p style="text-align:left; max-width:760px; margin:0 auto; line-height:1.9;">
+          あなたの守護霊が今伝えたがっているメッセージを受け取り、
+          止まっていた流れを動かすきっかけにしませんか。<br />
+          頑張るだけでは変わらなかった現実を、ここから整えていきましょう。
+        </p>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn btn-primary" href="#apply">メニューを選んで申し込む</a>
+          <a class="btn btn-secondary" href="YOUR_CONTACT_LINK">お問い合わせはこちら</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 知来メゾット Individual Session Landing Page</p>
+    </div>
+  </footer>
+</body>
+</html>    letter-spacing: 0.02em;
   }
 
   a { color: inherit; text-decoration: none; }
