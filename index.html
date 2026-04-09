@@ -125,7 +125,8 @@
   .faq-item,
   .problem-card,
   .benefit-card,
-  .cta-box {
+  .cta-box,
+  .price-group-box {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: var(--radius);
@@ -149,17 +150,17 @@
     background: radial-gradient(circle, rgba(228,183,255,0.35), transparent 70%);
   }
 
-h1.hero-title {
-  font-size: clamp(30px, 4.8vw, 62px);
-  line-height: 1.12;
-  margin: 18px 0 18px;
-  letter-spacing: -0.01em;
-}
+  h1.hero-title {
+    font-size: clamp(30px, 4.8vw, 62px);
+    line-height: 1.12;
+    margin: 18px 0 18px;
+    letter-spacing: -0.01em;
+  }
 
-.hero-line {
-  display: block;
-  white-space: nowrap;
-}
+  .hero-line {
+    display: block;
+    white-space: nowrap;
+  }
 
   h2 {
     font-size: clamp(28px, 3vw, 42px);
@@ -532,6 +533,33 @@ h1.hero-title {
     color: rgba(255,255,255,.62);
   }
 
+  .price-group-wrap {
+    display: grid;
+    gap: 30px;
+  }
+
+  .price-group-box {
+    padding: 28px 24px;
+  }
+
+  .price-group-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: clamp(22px, 2.4vw, 30px);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .price-group-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0 0 24px;
+  }
+
   footer {
     padding: 32px 0 48px;
     color: rgba(255,255,255,.58);
@@ -573,7 +601,8 @@ h1.hero-title {
     .menu-card,
     .faq-item,
     .cta-box,
-    .glass {
+    .glass,
+    .price-group-box {
       padding: 22px 18px !important;
     }
 
@@ -588,17 +617,17 @@ h1.hero-title {
       line-height: 1.5;
     }
 
-h1.hero-title {
-  font-size: clamp(32px, 9.8vw, 42px);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  margin: 16px 0 18px;
-}
+    h1.hero-title {
+      font-size: clamp(32px, 9.8vw, 42px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin: 16px 0 18px;
+    }
 
-.hero-line {
-  display: block;
-  white-space: nowrap;
-}
+    .hero-line {
+      display: block;
+      white-space: nowrap;
+    }
 
     .lead {
       font-size: 15px;
@@ -653,18 +682,19 @@ h1.hero-title {
   <header class="hero">
     <div class="container hero-grid">
       <div class="hero-card">
-<div class="hero-badge">
-  <span>前回完売</span>
-  <span class="sep">｜</span>
-  <span>予約の取れない個別鑑定</span>
-</div>
+        <div class="hero-badge">
+          <span>前回完売</span>
+          <span class="sep">｜</span>
+          <span>予約の取れない個別鑑定</span>
+        </div>
 
-<h1 class="hero-title">
-  <span class="hero-line">守護霊からの</span>
-  <span class="hero-line">メッセージで</span>
-  <span class="hero-line highlight">心のブロックを外し、</span>
-  <span class="hero-line">本来の流れへ戻る</span>
-</h1>
+        <h1 class="hero-title">
+          <span class="hero-line">守護霊からの</span>
+          <span class="hero-line">メッセージで</span>
+          <span class="hero-line highlight">心のブロックを外し、</span>
+          <span class="hero-line">本来の流れへ戻る</span>
+        </h1>
+
         <p class="lead">
           知来メゾット個別鑑定は、守護霊・守護神とコンタクトを取りながら、
           深い細胞に刻まれた原因を見つけ、心のブロックや思い込みを整えていくセッションです。
@@ -672,10 +702,9 @@ h1.hero-title {
         </p>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="#menu">メニューを見る</a>
+          <a class="btn btn-primary" href="#menu">料金メニューを見る</a>
           <a class="btn btn-secondary" href="#offer">特典を確認する</a>
         </div>
-
       </div>
 
       <div class="hero-visual">
@@ -875,73 +904,197 @@ h1.hero-title {
     <div class="container">
       <div class="section-title">
         <span class="badge">Menu</span>
-        <h2>鑑定メニュー</h2>
+        <h2>鑑定メニュー・料金一覧</h2>
         <div class="divider"></div>
       </div>
 
+      <p class="section-sub">
+        初回の方、リピートの方、サロン生の方で料金が異なります。<br />
+        ご自身に該当するメニューからお選びください。
+      </p>
 
-      <div class="menu-grid">
-        <article class="menu-card">
-          <span class="label">お悩み1つにおすすめ</span>
-          <div class="time">40分セッション</div>
-          <p>短時間で一つのお悩みに絞って見てほしい方向け。</p>
-          <div class="price-row">
-            <span class="old-price">通常 40,000円</span>
-            <span class="new-price">24,000円</span>
-            <span class="discount">16,000円OFF</span>
-          </div>
-          <ul>
-            <li>お悩み相談1つ</li>
-            <li>まずは体感したい方に</li>
-            <li>初回導入におすすめ</li>
-          </ul>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://chilai.stores.jp/items/666fe4701b56ba002f348d4c">40分セッションを申し込む</a>
-          </div>
-        </article>
+      <div class="price-group-wrap">
 
-        <article class="menu-card">
-          <span class="label">複数のお悩みを相談したい方へ</span>
-          <div class="time">60分セッション</div>
-          <p>2〜3つのお悩みをじっくり整理したい方におすすめ。</p>
-          <div class="price-row">
-            <span class="old-price">通常 60,000円</span>
-            <span class="new-price">38,000円</span>
-            <span class="discount">22,000円OFF</span>
-          </div>
-          <ul>
-            <li>お悩み2〜3つ</li>
-            <li>変化のきっかけを深めたい方に</li>
-            <li>バランスよく相談しやすい枠</li>
-          </ul>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://chilai.stores.jp/items/68a29fa945c8a97459100d0d">60分セッションを申し込む</a>
-          </div>
-        </article>
+        <div class="price-group-box">
+          <div class="price-group-title">初回料金</div>
+          <p class="price-group-note">はじめて個別鑑定を受ける方はこちら</p>
 
-        <article class="menu-card popular">
-          <div class="ribbon">人気No.1</div>
-          <span class="label">一番人気｜しっかり見てほしい方へ</span>
-          <div class="time">90分セッション</div>
-          <p>複数のお悩みや人生全体の流れまで、深く見てほしい方向け。</p>
-          <div class="price-row">
-            <span class="old-price">通常 90,000円</span>
-            <span class="new-price">55,000円</span>
-            <span class="discount">35,000円OFF</span>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <span class="label">初回｜お悩み1つにおすすめ</span>
+              <div class="time">40分セッション</div>
+              <p>短時間で一つのお悩みに絞って見てほしい方向け。</p>
+              <div class="price-row">
+                <span class="new-price">24,000円</span>
+              </div>
+              <ul>
+                <li>お悩み相談1つ</li>
+                <li>まずは体感したい方に</li>
+                <li>初回導入におすすめ</li>
+              </ul>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://chilai.stores.jp/items/666fe4701b56ba002f348d4c" target="_blank" rel="noopener noreferrer">40分セッションを申し込む</a>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <span class="label">初回｜複数のお悩みを相談したい方へ</span>
+              <div class="time">60分セッション</div>
+              <p>2〜3つのお悩みをじっくり整理したい方におすすめ。</p>
+              <div class="price-row">
+                <span class="new-price">38,000円</span>
+              </div>
+              <ul>
+                <li>お悩み2〜3つ</li>
+                <li>変化のきっかけを深めたい方に</li>
+                <li>バランスよく相談しやすい枠</li>
+              </ul>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://chilai.stores.jp/items/68a29fa945c8a97459100d0d" target="_blank" rel="noopener noreferrer">60分セッションを申し込む</a>
+              </div>
+            </article>
+
+            <article class="menu-card popular">
+              <div class="ribbon">人気No.1</div>
+              <span class="label">初回｜一番人気</span>
+              <div class="time">90分セッション</div>
+              <p>複数のお悩みや人生全体の流れまで、深く見てほしい方向け。</p>
+              <div class="price-row">
+                <span class="new-price">55,000円</span>
+              </div>
+              <ul>
+                <li>複数のお悩みに対応</li>
+                <li>人生の流れをしっかり整理</li>
+                <li>迷いを断ち切りたい方におすすめ</li>
+              </ul>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://chilai.stores.jp/items/6660877f00d7d50ff732ee0c" target="_blank" rel="noopener noreferrer">90分セッションを申し込む</a>
+              </div>
+            </article>
           </div>
-          <ul>
-            <li>複数のお悩みに対応</li>
-            <li>人生の流れをしっかり整理</li>
-            <li>迷いを断ち切りたい方におすすめ</li>
-          </ul>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://chilai.stores.jp/items/6660877f00d7d50ff732ee0c">90分セッションを申し込む</a>
+        </div>
+
+        <div class="price-group-box">
+          <div class="price-group-title">リピート料金</div>
+          <p class="price-group-note">2回目以降の方はこちら</p>
+
+          <div class="menu-grid">
+            <article class="menu-card">
+              <span class="label">リピート｜お悩み1つにおすすめ</span>
+              <div class="time">40分セッション</div>
+              <p>継続して確認したいことがある方や、ピンポイント相談におすすめ。</p>
+              <div class="price-row">
+                <span class="new-price">22,000円</span>
+              </div>
+              <ul>
+                <li>2回目以降の方向け</li>
+                <li>経過確認や追加相談に</li>
+                <li>気になるテーマを短時間で整理</li>
+              </ul>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://chilai.stores.jp/items/692f645f4b9bcaf9c0e55fee" target="_blank" rel="noopener noreferrer">40分セッションを申し込む</a>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <span class="label">リピート｜バランスよく相談したい方へ</span>
+              <div class="time">60分セッション</div>
+              <p>その後の変化を見ながら、複数テーマを相談したい方に。</p>
+              <div class="price-row">
+                <span class="new-price">32,000円</span>
+              </div>
+              <ul>
+                <li>2〜3テーマの相談に</li>
+                <li>流れの変化を確認したい方に</li>
+                <li>継続サポートにおすすめ</li>
+              </ul>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://chilai.stores.jp/items/6748992c07a6e81662c23f07" target="_blank" rel="noopener noreferrer">60分セッションを申し込む</a>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <span class="label">リピート｜しっかり深めたい方へ</span>
+              <div class="time">90分セッション</div>
+              <p>変化の流れを深く見ながら、今後の方向性まで丁寧に整えたい方に。</p>
+              <div class="price-row">
+                <span class="new-price">48,000円</span>
+              </div>
+              <ul>
+                <li>深いテーマの見直しに</li>
+                <li>人生全体の流れの再確認に</li>
+                <li>本格的に整えたい方へ</li>
+              </ul>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://chilai.stores.jp/items/666fe2ebe0a19e002b08b705" target="_blank" rel="noopener noreferrer">90分セッションを申し込む</a>
+              </div>
+            </article>
           </div>
-        </article>
+        </div>
+
+        <div class="price-group-box">
+          <div class="price-group-title">サロン生料金</div>
+          <p class="price-group-note">サロン生の方はこちらの特別価格からお選びください</p>
+
+          <div class="menu-grid">
+            <article class="menu-card">
+              <span class="label">サロン生｜お悩み1つにおすすめ</span>
+              <div class="time">40分セッション</div>
+              <p>サロン生向けの特別価格で、ピンポイントに相談したい方へ。</p>
+              <div class="price-row">
+                <span class="new-price">16,000円</span>
+              </div>
+              <ul>
+                <li>サロン生限定価格</li>
+                <li>短時間で聞きたいことを整理</li>
+                <li>継続的なメンテナンスにも</li>
+              </ul>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://chilai.stores.jp/items/692f65c44b9bca0c41e56008" target="_blank" rel="noopener noreferrer">40分セッションを申し込む</a>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <span class="label">サロン生｜複数相談したい方へ</span>
+              <div class="time">60分セッション</div>
+              <p>今の状態を整えながら、複数テーマを相談したい方におすすめ。</p>
+              <div class="price-row">
+                <span class="new-price">24,000円</span>
+              </div>
+              <ul>
+                <li>サロン生限定価格</li>
+                <li>複数テーマの相談に対応</li>
+                <li>流れを整えたい方へ</li>
+              </ul>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://chilai.stores.jp/items/68662964c5d1bb1b0e658d6e" target="_blank" rel="noopener noreferrer">60分セッションを申し込む</a>
+              </div>
+            </article>
+
+            <article class="menu-card popular">
+              <div class="ribbon">特別価格</div>
+              <span class="label">サロン生｜しっかり相談したい方へ</span>
+              <div class="time">90分セッション</div>
+              <p>深いテーマや人生全体の流れまで、たっぷり相談したい方へ。</p>
+              <div class="price-row">
+                <span class="new-price">35,000円</span>
+              </div>
+              <ul>
+                <li>サロン生限定価格</li>
+                <li>複数のお悩みにしっかり対応</li>
+                <li>深く見てもらいたい方におすすめ</li>
+              </ul>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://chilai.stores.jp/items/68662a651c72b42ed9a736e2" target="_blank" rel="noopener noreferrer">90分セッションを申し込む</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
       </div>
 
-      <p class="small" style="margin-top:16px; text-align:center;">
-        ※ 通常価格より最大35,000円OFF。
+      <p class="small" style="margin-top:18px; text-align:center;">
+        ※ ご自身の対象区分（初回・リピート・サロン生）をご確認のうえ、お申し込みください。
       </p>
     </div>
   </section>
@@ -953,7 +1106,6 @@ h1.hero-title {
         <h2>セミナー限定特典</h2>
         <div class="divider"></div>
       </div>
-
 
       <div class="bonus-grid">
         <div class="bonus-card">
@@ -976,11 +1128,11 @@ h1.hero-title {
         </div>
         <div class="bonus-card">
           <strong>その他のご案内</strong>
-          <p>リピート割引・サロン生割引については、該当の方へ個別にご案内する想定です。</p>
+          <p>リピート料金・サロン生料金は、該当の方が選べる専用価格です。ご自身の対象メニューからお申し込みください。</p>
           <ul>
-            <li>リピート割引あり</li>
-            <li>サロン生割引あり</li>
-            <li>詳細は個別問い合わせへ</li>
+            <li>リピート専用料金あり</li>
+            <li>サロン生専用料金あり</li>
+            <li>対象が不明な場合は事前にお問い合わせください</li>
           </ul>
         </div>
       </div>
@@ -1023,15 +1175,15 @@ h1.hero-title {
       <div class="faq-list">
         <div class="faq-item">
           <strong>Q. どのメニューを選べばいいですか？</strong>
-          <p>A. 1つのお悩みに絞って見たい方は40分、複数のお悩みをバランスよく見たい方は60分、人生全体や深い部分までしっかり見てほしい方は90分がおすすめです。</p>
+          <p>A. 初めての方は「初回料金」から、2回目以降の方は「リピート料金」から、サロン生の方は「サロン生料金」からお選びください。時間の目安としては、1つのお悩みなら40分、複数相談したい方は60分、人生全体や深いテーマまで見てほしい方は90分がおすすめです。</p>
         </div>
         <div class="faq-item">
           <strong>Q. スピリチュアルが初めてでも大丈夫ですか？</strong>
-          <p>A. 初めての方でも受けていただきやすいよう、分かりやすい導線と表現でご案内しています。</p>
+          <p>A. はい。初めての方でも受けていただきやすいよう、分かりやすい導線と表現でご案内しています。</p>
         </div>
         <div class="faq-item">
           <strong>Q. 割引や特典はありますか？</strong>
-          <p>A. はい。セミナー限定特典として、90分セッションにライフリーディングが付く特典や、1Day体験＋90分グルコン参加特典があります。</p>
+          <p>A. はい。セミナー限定特典のほか、リピートの方・サロン生の方向けの専用料金をご用意しています。対象区分に応じたメニューからお申し込みください。</p>
         </div>
       </div>
     </div>
